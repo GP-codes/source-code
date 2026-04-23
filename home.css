@@ -1,0 +1,37 @@
+
+.header-text
+{
+border-raidus: 15px;
+text-align:center;
+color:crimson;
+font-family: 'Roboto', sans-serif;
+background-color:aliceblue;
+}
+
+.body-text
+{
+background-color: lightsalmon;
+border-radius: 15px;
+font-family: 'Papyrus', sans-serif;
+font-size: 20px; 
+color: black;
+}
+
+.img-size
+{
+width:250px; height:250px;
+display: block;
+vertical-align:top;
+margin:15px 40px;
+}
+
+.product
+{
+display: inline-block;
+width: 250px;
+text-align:center;
+font-family: 'Papyrus', sans-serif;
+font-size: 15px;
+vertical-align:top;
+margin:15px 40px;
+}
