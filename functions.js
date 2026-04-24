@@ -1,7 +1,7 @@
 function details(itemName)
 
 {
-window.location.href = itemName+ ".html";
+window.open (itemName+ ".html", "_blank");
 }
 
 
