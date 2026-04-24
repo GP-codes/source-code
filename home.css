@@ -25,6 +25,14 @@ vertical-align:top;
 margin:15px 40px;
 }
 
+.img-detail
+{
+width:600px; height:600px;
+display:block;
+margin-left:auto;
+margin-right:auto;
+}
+
 .product
 {
 display: inline-block;
@@ -35,3 +43,16 @@ font-size: 15px;
 vertical-align:top;
 margin:15px 40px;
 }
+
+.product-detail
+{
+display: inline-block;
+width: 600px;
+text-align:center;
+font-family: 'Papyrus', sans-serif;
+font-size: 30px;
+vertical-align:top;
+margin:15px;
+background-color: cornsilk;
+}
+
