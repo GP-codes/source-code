@@ -8,6 +8,11 @@ var numItems = 0;
 var price = 0;
 var price_list = [25,30,100,20,450,500,400,600,150,125,175,200]
 
+if (localStorage.getItem("totalItems") !== null) {
+    numItems = parseInt(localStorage.getItem("totalItems"));
+    price = parseInt(localStorage.getItem("totalPrice"));
+}
+
 
 function cart(itemName)
 {
