@@ -66,12 +66,37 @@ break;
 
 }
 
+localStorage.setItem("totalItems", numItems)
+localStorage.setItem("totalPrice", price)
+
+
 }
+
+
+
+
+function checkout()
+{
+var savedItems = localStorage.getItem("totalItems");
+var savedPrice = localStorage.getItem("totalPrice");
+
+if (savedItems === null)
+{
+savedItems = 0;
+savedPrice = 0;
+}
+
+document.getElementById('titems').innerHTML = savedItems;
+document.getElementById('tprice').innerHTML = savedPrice;
+}
+
+
+
 
 function buy(itemName)
 
 {
-
+window.open("checkout.html", "_blank")
 }
 
 function negotiate(itemName)
