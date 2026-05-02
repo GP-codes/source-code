@@ -8,13 +8,21 @@ var numItems = 0;
 var price = 0;
 var price_list = [25,30,100,20,450,500,400,600,150,125,175,200]
 
-if (localStorage.getItem("totalItems") !== null) {
+
+
+
+function cart(itemName)
+{
+
+
+if (localStorage.getItem("totalItems") !== null) 
+{
     numItems = parseInt(localStorage.getItem("totalItems"));
     price = parseInt(localStorage.getItem("totalPrice"));
 }
 
 
-function cart(itemName)
+if(itemName !== undefined)
 {
 numItems += 1;
 document.getElementById('cart').innerHTML = numItems;
@@ -72,9 +80,17 @@ break;
 
 }
 
+
 localStorage.setItem("totalItems", numItems)
 localStorage.setItem("totalPrice", price)
 
+}
+
+var cartText = document.getElementById("cart");
+if (cartText !== null)
+{
+cartText.innerHTML = numItems;
+}
 
 }
 
