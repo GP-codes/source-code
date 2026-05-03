@@ -239,3 +239,22 @@ confirmpwBox.style.borderColor="green";
 
 
 }
+
+function emptyCart()
+{
+localStorage.clear();
+
+numItems = 0;
+price = 0;
+
+var cartText = document.getElementById("cart");
+
+if (cartText != null)
+{
+cartText.innerHTML = numItems;
+}
+
+alert("Your cart has been emptied!");
+
+
+}
