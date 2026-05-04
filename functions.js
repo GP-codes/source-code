@@ -11,6 +11,9 @@ var price_list = [25,30,100,20,450,500,400,600,150,125,175,200]
 
 
 
+
+
+
 function cart(itemName)
 {
 
@@ -121,16 +124,25 @@ function buy(itemName)
 window.open("checkout.html", "_blank")
 }
 
+
+
+
 function negotiate(itemName)
 
 {
 
 }
 
+
+
+
 function register()
 {
 window.open("register.html", "_blank")
 }
+
+
+
 
 function submitForm()
 {
@@ -150,6 +162,10 @@ localStorage.setItem("registeredUser", profileString);
 alert ("Registration successful! Welcome to the Emporium, " + newName + "!");
 
 }
+
+
+
+
 
 function validate(clickedID)
 {
@@ -205,9 +221,6 @@ else
 {
 emailBox.style.borderColor="green";
 }
-
-
-
 }
 
 else if (clickedID ==="phone")
@@ -252,12 +265,11 @@ else
 {
 confirmpwBox.style.borderColor="green";
 }
-
+}
 }
 
 
 
-}
 
 function emptyCart()
 {
@@ -274,6 +286,46 @@ cartText.innerHTML = numItems;
 }
 
 alert("Your cart has been emptied!");
+}
+
+
+
+
+
+function filterProducts()
+{
+var searchInput = document.getElementById('searchBar').value.toLowerCase();
+
+var categoryInput = document.getElementById('filter').value;
+
+
+var products = document.getElementsByClassName('product');
+
+for (var i = 0; i < products.length; i++)
+{
+var currentBox = products[i]
+
+var boxCategory = currentBox.getAttribute('data-category');
+
+var boxText = currentBox.innerText.toLowerCase();
+
+var passesCategoryTest = (categoryInput === "all" || boxCategory === categoryInput);
+
+var passesSearchTest = boxText.includes(searchInput);
+
+if(passesCategoryTest === true && passesSearchTest === true)
+{
+currentBox.style.display = "";
+}
+
+else
+{
+currentBox.style.display = "none";
+}
+
+}
 
 
 }
+
+
