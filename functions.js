@@ -161,21 +161,6 @@ cartText.innerHTML = numItems;
 
 function checkout()
 {
-/* var savedItems = localStorage.getItem("totalItems");
-var savedPrice = localStorage.getItem("totalPrice");
-
-if (savedItems === null)
-{
-savedItems = 0;
-savedPrice = 0;
-}
-
-document.getElementById('titems').innerHTML = savedItems;
-document.getElementById('tprice').innerHTML = savedPrice; 
-
-
-*/
-
 var savedCart = localStorage.getItem("detailedCart");
 var container = document.getElementById("cart-container");
 var summary = document.getElementById("cart-summary");
@@ -271,6 +256,7 @@ window.open("checkout.html", "_blank")
 function negotiate(itemName)
 
 {
+//unable to implement, function is too complex.
 
 }
 
@@ -414,7 +400,9 @@ confirmpwBox.style.borderColor="green";
 
 function emptyCart()
 {
-localStorage.clear();
+localStorage.removeItem("detailedCart");
+localStorage.setItem("totalItems", 0);
+localStorage.setItem("totalPrice",0);
 
 numItems = 0;
 price = 0;
@@ -469,4 +457,39 @@ currentBox.style.display = "none";
 
 }
 
+
+
+function receipt()
+{
+var savedCart = localStorage.getItem("detailedCart");
+var cartArray = JSON.parse(savedCart);
+
+var receiptHTML = "<h1 style= 'color:green;'>Your order has been placed successfully!</h1>";
+
+receiptHTML += "<h3>Order Receipt:</h3><ul>";
+
+for (var i = 0; i < cartArray.length; i++)
+{
+var item = cartArray[i];
+receiptHTML += "<li>" + item.quantity + "x " + item.name + " -$" + item.price + "</li>";
+
+
+}
+
+receiptHTML += "</ul>";
+
+var total = document.getElementById("gtotal").innerText;
+receiptHTML += "<h2>Total paid: $"+ total + "</h2>";
+receiptHTML += "<p>Thank you for shopping at Supernatural Emporium. Your order will be magically teleported to you shortly!</p>";
+
+document.getElementById("cart-container").style.display = "none";
+document.getElementById("cart-summary").style.display = "none";
+
+var receiptBox = document.getElementById("receipt-container");
+receiptBox.innerHTML = receiptHTML;
+receiptBox.style.display = "block";
+
+emptyCart();
+
+}
 
