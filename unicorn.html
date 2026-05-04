@@ -5,7 +5,8 @@
 <script type = "text/javascript" src="functions.js"> </script>
 </head>
 
-<body>
+<body onload="cart()">
+
 <a href="index.html">
 <img src="media/home.png" style="width:75px; height:75px;">
 </a>
@@ -15,7 +16,7 @@
 </a>
 
 <input type="button" value="Register" onclick="register()" />
-<p id="titems" class="cart" style="text-align:right;">0</p>
+<p id="cart" class="cart" style="text-align:right;">0</p>
 
 <input type="button" value="Empty Cart" onclick="emptyCart()" />
 
