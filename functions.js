@@ -132,6 +132,24 @@ function register()
 window.open("register.html", "_blank")
 }
 
+function submitForm()
+{
+var newName = document.getElementById('fullname').value;
+var newAd = document.getElementById('address').value;
+var newEmail= document.getElementById('email').value;
+var newPhone = document.getElementById('phone').value;
+var newPw = document.getElementById('pw').value;
+
+var userProfile = {name: newName, address:newAd,
+email: newEmail, phone: newPhone, password: newPw};
+
+let profileString = JSON.stringify(userProfile);
+localStorage.setItem("registeredUser", profileString);
+
+
+alert ("Registration successful! Welcome to the Emporium, " + newName + "!");
+
+}
 
 function validate(clickedID)
 {
@@ -236,6 +254,7 @@ confirmpwBox.style.borderColor="green";
 }
 
 }
+
 
 
 }
